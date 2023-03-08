@@ -233,7 +233,7 @@ input {
   height: 48px;
 }
 
-.formData[data-error]::after {
+/*.formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: #e54858;
@@ -244,22 +244,31 @@ input {
   line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
+}*/
+
+.formData input:focus {
+  outline: none;
 }
 
-.formData[data-error-visible="true"]::after {
-  opacity: 1;
+.formData.error input {
+  color: #e54858;
 }
 
-.formData[data-error-visible="true"] .text-control {
-  border: 2px solid #e54858;
+.form-field.success input {
+  border-color: #ccc;
 }
 
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+.formData small {
+  content: attr(data-error);
+  font-size: 10px;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  line-height: 0.3;
+  transition: 0.3s;
+}
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -591,3 +600,4 @@ footer {
     opacity: 1;
   }
 }
+
