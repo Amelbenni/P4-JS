@@ -10,8 +10,10 @@ function editNav() {
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
+const modalValidation = document.querySelector(".btn-close");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
+const closeModalValidation = document.querySelector(".close-validation");
 const formBtn = document.querySelector(".btn-submit");
 const form = document.querySelector('form');
 const firstName = document.querySelector("#first");
@@ -29,18 +31,32 @@ const radio = document.querySelector(".radio");
 const conditions = document.querySelector("#checkbox1");
 const condition = document.querySelector(".checkbox");
 
+
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+
 closeModalBtn.addEventListener("click", closeModal);
 
+modalValidation.addEventListener("click", closeValidation);
+closeModalValidation.addEventListener("click", closeValidation);  
 
 // launch modal form
 function launchModal() {
 	modalbg.style.display = "block";
 }
 
+const launchValidation = () => {
+	modalbg.style.display = "none";
+	document.querySelector(".bground-validation").style.display = "block";
+}
+
 function closeModal() {
 	modalbg.style.display = "none";
+}
+
+function closeValidation() {
+	document.querySelector(".bground-validation").style.display = "none";
 }
 
 const isRequired = value => value === '' ? false : true;
@@ -183,7 +199,8 @@ const checkConditions = () => {
 	return false;
 }
 
-formBtn.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => { 
+	e.preventDefault();
 	let isFirstnameValid = checkFirstName(),
 		isLastnameValid = checkLastName(),
 		isEmailValid = checkEmail(),
@@ -202,9 +219,17 @@ formBtn.addEventListener("click", (e) => {
 
 	// submit to the server if the form is valid
 	if (!isFormValid) {
-		e.preventDefault();
-	}
+		return;
+	} 
 
+	setTimeout(launchValidation, 100);
+
+	form.reset();
+
+	/* //recupérer element modalBody.
+	document.querySelector(".modal-body").style.display = "none";
+	//créer div et cacher contenu. 
+	document.querySelector(".validation").style.display = "flex"; */
 });
 
 const debounce = (fn, delay = 500) => {

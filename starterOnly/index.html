@@ -44,16 +44,16 @@
       <div class="hero-img">
         <img src="./bg_img.jpg" alt="img" />
       </div>
-      <button class="btn-signup modal-btn">
+      <!-- <button class="btn-signup modal-btn">
         je m'inscris
-      </button>
+      </button> -->
     </div>
 
     <div class="bground">
       <div class="content">
         <span class="close"></span>
         <div class="modal-body">
-          <form name="reserve" action="index.html" method="get" onsubmit="return validate();">
+          <form name="reserve" action="index.html" method="get">
             <div class="formData first">
               <label for="first">Prénom</label><br>
               <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
@@ -71,17 +71,17 @@
             </div>
             <div class="formData birthdate">
               <label for="birthdate">Date de naissance</label><br>
-              <input class="text-control" type="date" id="birthdate" name="birthdate"  /><br>
+              <input class="text-control" type="date" id="birthdate" name="birthdate" /><br>
               <small></small>
             </div>
             <div class="formData quantity">
               <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" >
+              <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               <small></small>
             </div>
             <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
             <div class="formData radio">
-              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"  />
+              <input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
               <label class="checkbox-label" for="location1">
                 <span class="checkbox-icon"></span>
                 New York</label>
@@ -125,6 +125,15 @@
             </div>
             <input class="btn-submit" type="submit" class="button" value="C'est parti" />
           </form>
+        </div>
+      </div>
+    </div>
+    <div class="bground-validation">
+      <div class="content-validation">
+        <span class="close-validation"></span>
+        <div class="validation">
+          <p>Merci pour votre inscription</p>
+          <button class="btn-close" type="button">Fermer</button>
         </div>
       </div>
     </div>
