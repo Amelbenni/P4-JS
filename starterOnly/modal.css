@@ -16,8 +16,8 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
-  font-family: var(--font-default);
+/*   background-image: url("background.png");
+ */  font-family: var(--font-default);
   font-size: 18px;
   max-width: 1400px;
   margin: 0 auto;
@@ -107,6 +107,9 @@ img {
     display: block;
     text-align: left;
   }
+  .active span {
+    padding-right: 30px;
+  }
 }
 
 
@@ -119,7 +122,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    
   }
 }
 
@@ -219,9 +222,17 @@ main {
 .validation {
   padding: 15px 8%;
   margin: 15px auto;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+    font-family: var(--font-default);
+    font-size: 36px;
+    text-align: center;
+    font-weight: 400;
+    padding-top: 250px;
+    padding-bottom: 43px;
 }
 
 
@@ -472,6 +483,14 @@ input {
   font-size: 16px;
 }
 
+@media screen and (max-width: 540px)  {
+  .bground, .bground-validation {
+    background: none;
+    position: absolute;
+    top: 60px;
+  }
+}
+
 .hero-section {
   min-height: 93vh;
   border-radius: 8px;
@@ -538,6 +557,7 @@ input {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 
 .copyrights {
@@ -602,6 +622,23 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .hero-headline {
+    font-size: 40px;
+    font-weight: 500;
+  }
+
+  .hero-content{
+    padding: 10px;
+    min-width: auto;
+  }
+
+  .hero-text {
+    font-size: 13px;
+    margin-top: 15px;
   }
 }
 
