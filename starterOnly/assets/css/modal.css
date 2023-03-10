@@ -259,29 +259,17 @@ input {
   height: 48px;
 }
 
-/*.formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.4em;
-  color: #e54858;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-}*/
-
 .formData input:focus {
   outline: none;
 }
 
 .formData.error input {
   color: #e54858;
+  border: 3px solid #e54858;
 }
 
-.form-field.success input {
-  border-color: #ccc;
+.formData.success input {
+  border: 3px solid #279e7a;
 }
 
 .formData small {
