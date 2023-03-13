@@ -67,6 +67,9 @@ const showSuccess = (element) => {
 	error.textContent = '';
 }
 
+/**
+ * check firstname input
+ */
 const checkFirstName = () => {
 	const firstNameField = firstNameFieldParent.querySelector('input').value.trim();
 	
@@ -93,6 +96,9 @@ const checkFirstName = () => {
 	return true;
 }
 
+/**
+ * check name input
+ */
 const checkLastName = () => {
 	const lastNameField = lastNameFieldParent.querySelector('input').value.trim();
 
@@ -119,6 +125,9 @@ const checkLastName = () => {
 	return true;
 }
 
+/**
+ * check email input
+ */
 const checkEmail = () => {
     const emailField = emailFieldParent.querySelector('input').value.trim();
     const isEmailValid = (emailField) => {return emailRegex.test(emailField);};
@@ -140,6 +149,9 @@ const checkEmail = () => {
 	return true;
 }
 
+/**
+ * check birthdate input
+ */
 const checkBirth = () => {
 	const birthField = birthdateFieldParent.querySelector('input').value.trim();
     const isBirthValid = (birth) => {return dateRegex.test(birth);};
@@ -168,6 +180,9 @@ const checkBirth = () => {
 	return true;
 }
 
+/**
+ * check quantity of event input
+ */
 const checkQuantityEvent = () => {
 	const min = 0, max = 99;
 	const quantityField = quantityFieldParent.querySelector('input').value.trim();
@@ -189,6 +204,9 @@ const checkQuantityEvent = () => {
 	return true;
 }
 
+/**
+ * check location of event input
+ */
 const checkLocation = () => {
 	for (const event of locationEvent) {
 		if (event.checked) {
@@ -202,7 +220,9 @@ const checkLocation = () => {
 
 	return false;
 }
-
+/**
+ * check if the conditions are selected
+ */
 const checkConditions = () => {
 	if (conditions.checked) {
 		showSuccess(condition);
